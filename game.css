@@ -1,0 +1,69 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+body {
+    height: 80vh;
+    display: flex;
+    background-color:ivory;
+    padding: 25px;
+    
+}
+h1 {
+    text-align: center;
+    font-weight: bolder;
+}
+.memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    padding-top: 50px;
+}
+.card {
+    position: relative;
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin:5px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s
+
+}
+.card:hover .card{
+    transform: rotateY(180deg)
+}
+
+
+.front {
+    border: 2px solid pink;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: azure;
+    backface-visibility: hidden;
+    
+}
+.back {
+    border: 2px solid pink;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: azure;
+    position: absolute; 
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.card.open {
+    transform: rotateY(180deg);
+}
+
+#timer {
+    font-size: 20px;
+}
