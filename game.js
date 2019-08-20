@@ -1,15 +1,19 @@
 var flip = document.getElementsByClassName("card")
-var flippedArray= [...flip]
-let flipped = false;
+var flippedArray= createArray()
 var card1, card2;
 var match = [];
+var flipped = false;
+
+function createArray (){
+let newArray= [...flip]
+  return newArray;
+}
 
 function matching (card1,card2) {
     card1.removeEventListener("click", cardFlipper);
     card2.removeEventListener("click", cardFlipper);
     return "removed"
 }
-
 function cardFlipper() {
 this.classList.add("open")
  // flip cards to show the front 
@@ -21,7 +25,7 @@ this.classList.add("open")
         card2 = this;
         // check matching cards and keep them flipped
         if(card1.dataset.deck === card2.dataset.deck){
-            atching()
+            matching(card1,card2)
             match.push(card1)
         // alert the user if they have matched all cards withing the given tim e
             setTimeout(()=>{
@@ -47,17 +51,17 @@ function shuffle () {
     flippedArray.forEach(function(flip){
         let shuffled = Math.floor(Math.random()*12)
         flip.style.order = shuffled;
-        
     })
     return "shuffled"
 }
-// timer to set how long the game can be played 
+    // timer to set how long the game can be played 
+
  var time = 40;
  var timer = setInterval(function(){
      if(time == 0){
          clearInterval(timer)
          // alert when the given time to play the game is over
-         if(alert("Time up")){}else{
+         if(alert("Time's up")){}else{
              window.location.reload()
          }
      }
@@ -66,7 +70,12 @@ function shuffle () {
      document.getElementById("timers").innerHTML = time
  },1000)
 
+ function start (){
+     shuffle(flippedArray)
+}
+     window.onload = start();
+ 
 module.exports = {
-    cardFlipper,
-    shuffle
+    shuffle,
+    createArray
 }

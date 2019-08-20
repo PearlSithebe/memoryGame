@@ -1,7 +1,6 @@
 {
   "name": "memorygame",
   "version": "1.0.0",
-  "description": "",
   "main": "game.js",
   "scripts": {
     "test": "jasmine"
@@ -16,8 +15,8 @@
     "url": "https://github.com/PearlSithebe/memoryGame/issues"
   },
   "homepage": "https://github.com/PearlSithebe/memoryGame#readme",
+  "description": "",
   "dependencies": {
-    "jasmine": "^3.4.0",
-    "jsdom": "^15.1.1"
+    "jasmine": "^3.4.0"
   }
 }
